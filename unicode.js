@@ -48,7 +48,29 @@ let index2 = 2;
 Expected Output:
 codePointDifference: 16 // 'C' = 67, 't' = 116, |67 - 116| = 16
 
+*/
+//exercise 1
+let inputString = "Hi!";
+let sumOfCodePoints = inputString.charCodeAt(0) + inputString.charCodeAt(1);
+console.log(`'H' = ${inputString.charCodeAt(0)}, 'i' = ${inputString.charCodeAt(1)}, ${inputString.charCodeAt(0)} +  ${inputString.charCodeAt(1)} = ${sumOfCodePoints}`);
 
+//exercise 2
+let codePoint1 = 65;
+let codePoint2 = 66;
+let combinedString = (`combinedString: "${String.fromCharCode(codePoint1)}${String.fromCharCode(codePoint2)}" // ${codePoint1} = '${String.fromCharCode(codePoint1)}', ${codePoint2} = '${String.fromCharCode(codePoint2)}', combined = "${String.fromCharCode(codePoint1)}${String.fromCharCode(codePoint2)}"`);
+console.log(combinedString);
+
+//exercise 3 The math on this isn't making sense to me from line 49 above. I can't figure out how 67-116 is supposed to equal 16.
+let inputStringEx3 = "Cat";
+let index1 = 0;
+let index2 = 2;
+
+let codePointC = inputStringEx3.charCodeAt(index1);
+let codePointT = inputStringEx3.charCodeAt(index2);
+let codePointDifference = Math.abs(inputStringEx3.charCodeAt(index1) - inputStringEx3.charCodeAt(index2));
+
+console.log(`codePoint Difference: 49 // '${inputString.charCodeAt(0)}' = ${codePointC}, '${inputString.charCodeAt(2)}', |'${inputString.charCodeAt(0)}' - ${inputString.charCodeAt(2)}| = ${codePointDifference}`);
+/*
 
 Practice Problem #2
 
@@ -85,16 +107,21 @@ Assign the result to a variable named swappedString.
 
 //Starter Code
 // Task 1
-let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
+let inputString1Problem2 = "Code";
+let firstCodePoint = inputString1Problem2.charCodeAt(0); // Your code here
+let thirdCodePoint = inputString1Problem2.charCodeAt(2); // Your code here
 
 // Task 2
-let wordFromCodePoints; // Your code here
+let code1 = "72";
+let code2 = "101";
+let code3 = "108";
+let wordFromCodePoints = `${String.fromCharCode(code1)}${String.fromCharCode(code2)}${String.fromCharCode(code3)}${String.fromCharCode(code3)}`; // Your code here
 
 // Task 3
-let inputString2 = "Launch";
-let swappedString; // Your code here
+let inputString2Problem2 = "Launch";
+let letterL = inputString2Problem2.charCodeAt(0);
+let letterH = inputString2Problem2.charCodeAt(5);
+let swappedString = `${String.fromCharCode(letterH)}aunc${String.fromCharCode(letterL)}`; // Your code here
 
 // Log all results
 console.log({
