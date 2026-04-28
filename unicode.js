@@ -48,29 +48,7 @@ let index2 = 2;
 Expected Output:
 codePointDifference: 16 // 'C' = 67, 't' = 116, |67 - 116| = 16
 
-*/
-//exercise 1
-let inputString = "Hi!";
-let sumOfCodePoints = inputString.charCodeAt(0) + inputString.charCodeAt(1);
-console.log(`'H' = ${inputString.charCodeAt(0)}, 'i' = ${inputString.charCodeAt(1)}, ${inputString.charCodeAt(0)} +  ${inputString.charCodeAt(1)} = ${sumOfCodePoints}`);
 
-//exercise 2
-let codePoint1 = 65;
-let codePoint2 = 66;
-let combinedString = (`combinedString: "${String.fromCharCode(codePoint1)}${String.fromCharCode(codePoint2)}" // ${codePoint1} = '${String.fromCharCode(codePoint1)}', ${codePoint2} = '${String.fromCharCode(codePoint2)}', combined = "${String.fromCharCode(codePoint1)}${String.fromCharCode(codePoint2)}"`);
-console.log(combinedString);
-
-//exercise 3 The math on this isn't making sense to me from line 49 above. I can't figure out how 67-116 is supposed to equal 16.
-let inputStringEx3 = "Cat";
-let index1 = 0;
-let index2 = 2;
-
-let codePointC = inputStringEx3.charCodeAt(index1);
-let codePointT = inputStringEx3.charCodeAt(index2);
-let codePointDifference = Math.abs(inputStringEx3.charCodeAt(index1) - inputStringEx3.charCodeAt(index2));
-
-console.log(`codePoint Difference: 49 // '${inputString.charCodeAt(0)}' = ${codePointC}, '${inputString.charCodeAt(2)}', |'${inputString.charCodeAt(0)}' - ${inputString.charCodeAt(2)}| = ${codePointDifference}`);
-/*
 
 Practice Problem #2
 
@@ -93,8 +71,8 @@ Use charCodeAt to extract the Unicode code points of the first and third charact
 Assign the results to variables named firstCodePoint and thirdCodePoint.
 
 Task 2: Create a Word from Code Points
-Use the Unicode code points 72, 101, 108, and 108 (corresponding to the characters H, e, l, and l).
-Use String.fromCharCode to create the word "Hell".
+Use the Unicode code points 74, 97, 118, 97, 83, 99, 114, 105, 112, and 116.
+Use String.fromCharCode to create the word "JavaScript".
 Assign the result to a variable named wordFromCodePoints.
 
 Task 3: Swap First and Last Characters
@@ -107,26 +85,27 @@ Assign the result to a variable named swappedString.
 
 //Starter Code
 // Task 1
-let inputString1Problem2 = "Code";
-let firstCodePoint = inputString1Problem2.charCodeAt(0); // Your code here
-let thirdCodePoint = inputString1Problem2.charCodeAt(2); // Your code here
+let inputString1 = "Code";
+let firstCodePoint = inputString1.charCodeAt(0); // Your code here
+let thirdCodePoint = inputString1.charCodeAt(2); // Your code here
+console.log(firstCodePoint);
+console.log(thirdCodePoint);
 
 // Task 2
-let code1 = "72";
-let code2 = "101";
-let code3 = "108";
-let wordFromCodePoints = `${String.fromCharCode(code1)}${String.fromCharCode(code2)}${String.fromCharCode(code3)}${String.fromCharCode(code3)}`; // Your code here
+let codePoints = [74, 97, 118, 97, 83, 99, 114, 105, 112, 116];
+let wordFromCodePoints = String.fromCharCode(codePoints[0]) +  String.fromCharCode(codePoints[1]) +  String.fromCharCode(codePoints[2]) +  String.fromCharCode(codePoints[3]) +  String.fromCharCode(codePoints[4]) +  String.fromCharCode(codePoints[5]) +  String.fromCharCode(codePoints[6]) +  String.fromCharCode(codePoints[7]) +  String.fromCharCode(codePoints[8]) +  String.fromCharCode(codePoints[9]);
 
 // Task 3
-let inputString2Problem2 = "Launch";
-let letterL = inputString2Problem2.charCodeAt(0);
-let letterH = inputString2Problem2.charCodeAt(5);
-let swappedString = `${String.fromCharCode(letterH)}aunc${String.fromCharCode(letterL)}`; // Your code here
+let inputString2 = "Launch";
+let firstChar = inputString2.charCodeAt(0);
+let lastChar = inputString2.charCodeAt(5);
+let middleOfString = inputString2.slice(1,5);
+let swappedString = String.fromCharCode(lastChar) + middleOfString + String.fromCharCode(firstChar); // Your code here
 
 // Log all results
 console.log({
   firstCodePoint,
   thirdCodePoint,
   wordFromCodePoints,
-  swappedString,
+  swappedString
 });
